@@ -5,30 +5,36 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "customers")
 @Getter
 @Setter
-public class Employee {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Liên kết tới tài khoản đăng nhập - MỖI Employee ứng với đúng 1 User
+    // Liên kết tới tài khoản đăng nhập - MỖI Customer ứng với đúng 1 User
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
     @Column(nullable = false, unique = true)
-    private String employeeCode;
+    private String customerCode;
 
     @Column(nullable = false)
     private String fullName;
 
-    @Column(nullable = false)
+    // Đã XÓA field email - lấy qua user.getEmail() thay vì lưu lặp lại
+
+    @Column(nullable = false, unique = true)
     private String phone;
 
-    // Đã XÓA field role - dùng chung role bên User, tránh trùng lặp/lệch dữ liệu
+    @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false)
+    private Integer repairCount = 0;
 
     @Column(nullable = false)
     private String status = "ACTIVE";
