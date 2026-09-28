@@ -1,0 +1,17 @@
+# Frontend React
+FE/**/node_modules/
+FE/**/dist/
+FE/**/.env
+FE/**/.env.local
+FE/**/.env.*.local
+
+# Backend Spring Boot / Maven
+BE/**/target/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
