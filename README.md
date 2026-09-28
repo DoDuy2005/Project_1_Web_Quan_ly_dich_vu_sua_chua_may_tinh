@@ -1,4 +1,4 @@
-# README - Hướng dẫn Frontend làm việc với Backend
+# README - Hướng dẫn cài môi trường làm việc với Backend
 
 ## 1. Thông tin môi trường Backend
 
