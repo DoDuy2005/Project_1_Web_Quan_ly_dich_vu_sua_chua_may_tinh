@@ -8,15 +8,14 @@
 API:
 
 ``` http
-POST [http://localhost:8080/api/auth/login](http://localhost:8080/api/categories)
+POST http://localhost:8080/api/categories
 ```
 
 Body:
 
 ``` json
 {
-  "email": "khach01@gmail.com",
-  "password": "123456"
+  "name": "Dịch vụ 1"
 }
 ```
 
@@ -26,13 +25,10 @@ Ví dụ:
 
 ``` json
 {
-  "id": 1,
-  "email": "khach01@gmail.com",
-  "role": "CUSTOMER",
-  "token": "eyJhbGciOi..."
+    "id": 4,
+    "name": "Dịch vụ 1",
+    "status": "ACTIVE"
 }
 ```
-
-Frontend cần lưu `token` để sử dụng khi gọi các API yêu cầu xác thực.
 
 ------------------------------------------------------------------------
