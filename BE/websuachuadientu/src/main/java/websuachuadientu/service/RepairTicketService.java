@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import websuachuadientu.dto.RepairTicketRequest;
 import websuachuadientu.dto.RepairTicketResponse;
+import websuachuadientu.dto.RepairHistoryResponse;
 import websuachuadientu.entity.Customer;
 import websuachuadientu.entity.Employee;
 import websuachuadientu.entity.RepairTicket;
@@ -45,7 +46,31 @@ public class RepairTicketService {
     public RepairTicketResponse update(Long id, RepairTicketRequest request) {
         RepairTicket ticket = findTicket(id);
         apply(ticket, request);
+        if (("Hoàn thành".equalsIgnoreCase(request.getStatus())
+                || "COMPLETED".equalsIgnoreCase(request.getStatus()))
+                && ticket.getCompletedDate() == null) {
+            ticket.setCompletedDate(java.time.LocalDate.now());
+        }
         return toResponse(ticketRepository.save(ticket));
+    }
+
+    @Transactional(readOnly = true)
+    public List<RepairHistoryResponse> getMyHistory(String email) {
+        var customer = customerRepository.findByUser_Email(email)
+                .orElseThrow(() -> new IllegalArgumentException("Tài khoản không thuộc khách hàng nào"));
+        return ticketRepository.findByCustomer_IdOrderByReceivedDateDescIdDesc(customer.getId())
+                .stream()
+                .map(ticket -> new RepairHistoryResponse(
+                        ticket.getTicketCode(),
+                        ticket.getDevice(),
+                        ticket.getQuote() == null ? null : ticket.getQuote().getItems().stream()
+                                .map(websuachuadientu.entity.RepairQuoteItem::getName)
+                                .collect(java.util.stream.Collectors.joining(", ")),
+                        ticket.getCompletedDate(),
+                        ticket.getQuote() == null ? null : ticket.getQuote().getTotalAmount(),
+                        ticket.getStatus()
+                ))
+                .toList();
     }
 
     private void apply(RepairTicket ticket, RepairTicketRequest request) {

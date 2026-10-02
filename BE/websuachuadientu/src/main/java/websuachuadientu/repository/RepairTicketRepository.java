@@ -19,4 +19,6 @@ public interface RepairTicketRepository extends JpaRepository<RepairTicket, Long
             ORDER BY t.receivedDate DESC, t.id DESC
             """)
     List<RepairTicket> search(@Param("keyword") String keyword);
+
+    List<RepairTicket> findByCustomer_IdOrderByReceivedDateDescIdDesc(Long customerId);
 }

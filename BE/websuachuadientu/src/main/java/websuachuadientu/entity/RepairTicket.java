@@ -29,10 +29,15 @@ public class RepairTicket {
     @Column(nullable = false)
     private LocalDate receivedDate;
 
+    private LocalDate completedDate;
+
     @Column(nullable = false, length = 50)
     private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "technician_id")
     private Employee technician;
+
+    @OneToOne(mappedBy = "repairTicket", fetch = FetchType.LAZY)
+    private RepairQuote quote;
 }
