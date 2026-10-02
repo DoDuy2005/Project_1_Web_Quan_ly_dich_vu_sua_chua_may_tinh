@@ -37,9 +37,6 @@ public class RepairQuote {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
-    @Column
-    private LocalDateTime paidAt;
-
     @PrePersist
     void onCreate() {
         if (createdAt == null) createdAt = LocalDateTime.now();

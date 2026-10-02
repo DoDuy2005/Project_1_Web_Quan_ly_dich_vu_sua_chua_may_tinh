@@ -13,7 +13,6 @@ import websuachuadientu.repository.RepairQuoteRepository;
 import websuachuadientu.repository.RepairTicketRepository;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -59,17 +58,6 @@ public class RepairQuoteService {
         return toResponse(quoteRepository.save(quote));
     }
 
-    @Transactional
-    public RepairQuoteResponse markPaid(Long quoteId) {
-        RepairQuote quote = findQuote(quoteId);
-        if (!"ACCEPTED".equals(quote.getStatus())) {
-            throw new IllegalStateException("Chỉ báo giá đã được chấp nhận mới có thể thanh toán");
-        }
-        quote.setStatus("PAID");
-        quote.setPaidAt(LocalDateTime.now());
-        return toResponse(quoteRepository.save(quote));
-    }
-
     private RepairQuote findQuote(Long id) {
         return quoteRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Không tìm thấy báo giá"));
@@ -97,7 +85,7 @@ public class RepairQuoteService {
                 quote.getItems().stream().map(item -> new RepairQuoteResponse.Item(
                         item.getId(), item.getName(), item.getQuantity(), item.getUnitPrice(), item.getLineTotal()
                 )).toList(),
-                quote.getTotalAmount(), quote.getStatus(), quote.getCreatedAt(), quote.getPaidAt()
+                quote.getTotalAmount(), quote.getStatus(), quote.getCreatedAt()
         );
     }
 }

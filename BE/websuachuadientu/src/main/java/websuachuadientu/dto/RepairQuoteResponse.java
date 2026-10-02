@@ -13,8 +13,7 @@ public record RepairQuoteResponse(
         List<Item> items,
         BigDecimal totalAmount,
         String status,
-        LocalDateTime createdAt,
-        LocalDateTime paidAt
+        LocalDateTime createdAt
 ) {
     public record Item(Long id, String name, Integer quantity, BigDecimal unitPrice, BigDecimal lineTotal) {}
 }

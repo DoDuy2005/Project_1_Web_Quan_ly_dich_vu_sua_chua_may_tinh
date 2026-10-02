@@ -36,11 +36,6 @@ public class RepairQuoteController {
         return ResponseEntity.ok(quoteService.decide(quoteId, request.decision()));
     }
 
-    @PatchMapping("/api/quotes/{quoteId}/payment")
-    public ResponseEntity<RepairQuoteResponse> markPaid(@PathVariable Long quoteId) {
-        return ResponseEntity.ok(quoteService.markPaid(quoteId));
-    }
-
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, String>> handleNotFound(IllegalArgumentException exception) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", exception.getMessage()));
