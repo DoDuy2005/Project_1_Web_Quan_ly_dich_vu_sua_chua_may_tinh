@@ -9,16 +9,10 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(
     (config) => {
-        const isAuthRequest =
-            config.url === "/api/auth/login" ||
-            config.url === "/api/auth/register";
+        const token = localStorage.getItem("token");
 
-        if (!isAuthRequest) {
-            const token = localStorage.getItem("token");
-
-            if (token) {
-                config.headers.Authorization = `Bearer ${token}`;
-            }
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
         }
 
         return config;
