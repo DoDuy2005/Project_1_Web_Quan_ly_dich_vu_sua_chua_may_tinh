@@ -1,4 +1,4 @@
-# Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh
+<img width="734" height="383" alt="image" src="https://github.com/user-attachments/assets/4a6161e0-4184-4fb3-9a2b-47dfd7994aec" /># Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh
 # README - Hướng dẫn cài môi trường làm việc với Backend đọc ở readme trong phần Quản Lý Thông Tin
 
 ------------------------------------------------------------------------
@@ -675,7 +675,72 @@ Ví dụ: Chỉ gọi bước này sau khi tiền đã được nhận. Thay 1 b
 ```
 
 ------------------------------------------------------------------------
+# 1. Phần xem lại lịch sử yêu cầu có đăng nhập 
 
+API:
+
+``` http
+POST http://localhost:8080/api/auth/login
+```
+
+Body:
+
+``` json
+{
+  "email": "khach01@gmail.com",
+  "password": "123456"
+}
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+{
+    "token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJraGFjaDAxQGdtYWlsLmNvbSIsInVpZCI6MSwicm9sZSI6IkNVU1RPTUVSIiwiZXhwIjoxNzkxMDQyNDE5LCJpYXQiOjE3OTA5NTYwMTksImp0aSI6ImJjYWVmZTkzLTc5OTYtNGNhZC04OGIxLTU3M2RlMTY0OTk1MSJ9.MM8hg95FSi7TGMsqFr7pvLx9OLtlViuXXlwXzGagD_W34iQysf318mfga2uJzylo",
+    "tokenType": "Bearer",
+    "id": 1,
+    "email": "khach01@gmail.com",
+    "role": "CUSTOMER",
+    "message": "Đăng nhập thành công"
+}
+```
+
+------------------------------------------------------------------------
+# 2. Lấy thông tin lịch sử của khách hàng 
+
+API:
+
+``` http
+GET http://localhost:8080/api/repair-tickets/history/me
+```
+
+Body:
+
+``` json
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+[
+    {
+        "ticketCode": "PS00001",
+        "device": "Dell Inspiron 2",
+        "service": "Thay nguồn laptop, Vệ sinh máy",
+        "completedDate": null,
+        "cost": 950000.00,
+        "status": "Đang sửa"
+    }
+]
+]
+```
+Yêu cầu vào phải có token của login test postman của khách hàng chọn  Authorization -> Bearer Token -> điền token -> send
+
+------------------------------------------------------------------------
 
 
 
