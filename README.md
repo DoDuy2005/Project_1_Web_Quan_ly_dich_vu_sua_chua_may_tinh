@@ -1,4 +1,4 @@
-<img width="734" height="383" alt="image" src="https://github.com/user-attachments/assets/4a6161e0-4184-4fb3-9a2b-47dfd7994aec" /># Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh
+
 # README - Hướng dẫn cài môi trường làm việc với Backend đọc ở readme trong phần Quản Lý Thông Tin
 
 ------------------------------------------------------------------------
