@@ -1,0 +1,53 @@
+package websuachuadientu.controller;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import websuachuadientu.dto.RepairQuoteDecisionRequest;
+import websuachuadientu.dto.RepairQuoteRequest;
+import websuachuadientu.dto.RepairQuoteResponse;
+import websuachuadientu.service.RepairQuoteService;
+
+import java.util.Map;
+
+@RestController
+@RequiredArgsConstructor
+public class RepairQuoteController {
+    private final RepairQuoteService quoteService;
+
+    @PostMapping("/api/repair-tickets/{ticketId}/quote")
+    public ResponseEntity<RepairQuoteResponse> create(
+            @PathVariable Long ticketId,
+            @Valid @RequestBody RepairQuoteRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(quoteService.create(ticketId, request));
+    }
+
+    @GetMapping("/api/repair-tickets/{ticketId}/quote")
+    public ResponseEntity<RepairQuoteResponse> getByTicket(@PathVariable Long ticketId) {
+        return ResponseEntity.ok(quoteService.getByTicketId(ticketId));
+    }
+
+    @PatchMapping("/api/quotes/{quoteId}/decision")
+    public ResponseEntity<RepairQuoteResponse> decide(
+            @PathVariable Long quoteId,
+            @Valid @RequestBody RepairQuoteDecisionRequest request) {
+        return ResponseEntity.ok(quoteService.decide(quoteId, request.decision()));
+    }
+
+    @PatchMapping("/api/quotes/{quoteId}/payment")
+    public ResponseEntity<RepairQuoteResponse> markPaid(@PathVariable Long quoteId) {
+        return ResponseEntity.ok(quoteService.markPaid(quoteId));
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, String>> handleNotFound(IllegalArgumentException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", exception.getMessage()));
+    }
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<Map<String, String>> handleConflict(IllegalStateException exception) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("message", exception.getMessage()));
+    }
+}
