@@ -163,3 +163,109 @@ Ví dụ:
 ```
 
 ------------------------------------------------------------------------
+
+# 1. thêm đặt lịch
+
+API:
+
+``` http
+POST http://localhost:8080/api/appointments
+```
+
+Body:
+
+``` json
+{
+  "device": "Laptop Dell Inspiron",
+  "serviceId": 1,
+  "appointmentDate": "2026-10-03",
+  "appointmentTime": "09:30:00",
+  "serviceMethod": "STORE_DROP_OFF",
+  "contactPhone": "0901234567",
+  "problemDescription": "Máy không lên nguồn",
+  "pickupAddress": null
+}
+
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+{
+    "appointmentDate": "2026-10-03",
+    "appointmentTime": "09:30:00",
+    "contactPhone": "0901234567",
+    "createdAt": "2026-10-02T19:25:02.0987932",
+    "device": "Laptop Dell Inspiron",
+    "id": 1,
+    "pickupAddress": null,
+    "problemDescription": "Máy không lên nguồn",
+    "service": {
+        "category": {
+            "id": 1,
+            "name": "Sửa chữa laptop",
+            "status": "ACTIVE"
+        },
+        "description": "Thay quạt laptop",
+        "id": 1,
+        "name": "Thay quạt tản nhiệt",
+        "price": 150000,
+        "serviceCode": "DV01",
+        "status": "ACTIVE"
+    },
+    "serviceMethod": "STORE_DROP_OFF",
+    "status": "PENDING"
+}
+```
+
+------------------------------------------------------------------------
+# 2. Lấy thông tin đặt lịch
+
+API:
+
+``` http
+GET http://localhost:8080/api/appointments
+```
+
+Body:
+
+``` json
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+[
+    {
+        "appointmentDate": "2026-10-03",
+        "appointmentTime": "09:30:00",
+        "contactPhone": "0901234567",
+        "createdAt": "2026-10-02T19:25:02.098793",
+        "device": "Laptop Dell Inspiron",
+        "id": 1,
+        "pickupAddress": null,
+        "problemDescription": "Máy không lên nguồn",
+        "service": {
+            "category": {
+                "id": 1,
+                "name": "Sửa chữa laptop",
+                "status": "ACTIVE"
+            },
+            "description": "Thay quạt laptop",
+            "id": 1,
+            "name": "Thay quạt tản nhiệt",
+            "price": 150000,
+            "serviceCode": "DV01",
+            "status": "ACTIVE"
+        },
+        "serviceMethod": "STORE_DROP_OFF",
+        "status": "PENDING"
+    }
+]
+```
+
+------------------------------------------------------------------------
