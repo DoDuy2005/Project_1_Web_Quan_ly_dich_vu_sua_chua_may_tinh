@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f39dc7d0-9919-4819-ade5-34331993276e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websuachuadientu/controller/RepairTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websuachuadientu/controller/RepairTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websuachuadientu/entity/RepairTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websuachuadientu/entity/RepairTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websuachuadientu/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websuachuadientu/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websuachuadientu/repository/RepairTicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websuachuadientu/repository/RepairTicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websuachuadientu/service/RepairTicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websuachuadientu/service/RepairTicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websuachuadientu/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websuachuadientu/repository/CustomerRepository.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="78" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;luongdoanh205&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DoDuy2005/Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh.git&quot;,
+    &quot;accountId&quot;: &quot;bf2eb67c-a9bf-48a2-9a72-b003f57b91e7&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JyCN4SvxSY9XpJXXpBFkabnf6K" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WebsuachuadientuApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#4 on backend&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GitHub/Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh/BE/websuachuadientu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh\BE\websuachuadientu\src\main\java\websuachuadientu\service" />
+      <recent name="D:\GitHub\Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh\BE\websuachuadientu\src\main\java\websuachuadientu\repository" />
+      <recent name="D:\GitHub\Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh\BE\websuachuadientu\src\main\java\websuachuadientu\controller" />
+      <recent name="D:\GitHub\Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh\BE\websuachuadientu\src\main\java\websuachuadientu\dto" />
+      <recent name="D:\GitHub\Project_1_Web_Quan_ly_dich_vu_sua_chua_may_tinh\BE\websuachuadientu\src\main\java\websuachuadientu\entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="WebsuachuadientuApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="websuachuadientu" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="websuachuadientu.WebsuachuadientuApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f39dc7d0-9919-4819-ade5-34331993276e" name="Changes" comment="" />
+      <created>1790623878530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790623878530</updated>
+      <workItem from="1790623880666" duration="216000" />
+      <workItem from="1790624108733" duration="473000" />
+      <workItem from="1790624653790" duration="280000" />
+      <workItem from="1790628381694" duration="113000" />
+      <workItem from="1790628502965" duration="157000" />
+      <workItem from="1790628670389" duration="5000" />
+      <workItem from="1790782578808" duration="256000" />
+      <workItem from="1790782853263" duration="25000" />
+      <workItem from="1790866490538" duration="16000" />
+      <workItem from="1790866572693" duration="335000" />
+      <workItem from="1790867010421" duration="317000" />
+      <workItem from="1790867415647" duration="1208000" />
+      <workItem from="1790941363444" duration="1127000" />
+      <workItem from="1790942508934" duration="926000" />
+      <workItem from="1790943448664" duration="376000" />
+      <workItem from="1790943837166" duration="1148000" />
+      <workItem from="1790945213175" duration="3888000" />
+      <workItem from="1790949135042" duration="2913000" />
+      <workItem from="1790952079490" duration="2745000" />
+      <workItem from="1790954855494" duration="1521000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
