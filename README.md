@@ -449,7 +449,32 @@ Backend trả về thông tin đăng nhập và JWT.
 Ví dụ: 
 
 ``` json
-
+{
+    "id": 1,
+    "quoteCode": "BG000001",
+    "repairTicketId": 1,
+    "ticketCode": "PS00001",
+    "customerName": "Tran Thi B",
+    "items": [
+        {
+            "id": 1,
+            "name": "Thay nguồn laptop",
+            "quantity": 1,
+            "unitPrice": 850000,
+            "lineTotal": 850000
+        },
+        {
+            "id": 2,
+            "name": "Vệ sinh máy",
+            "quantity": 1,
+            "unitPrice": 100000,
+            "lineTotal": 100000
+        }
+    ],
+    "totalAmount": 950000,
+    "status": "SENT",
+    "createdAt": "2026-10-02T21:53:26.9769616"
+}
 ```
 
 ------------------------------------------------------------------------
@@ -523,16 +548,75 @@ Backend trả về thông tin đăng nhập và JWT.
 Ví dụ:
 
 ``` json
-
+{
+    "id": 1,
+    "quoteCode": "BG000001",
+    "repairTicketId": 1,
+    "ticketCode": "PS00001",
+    "customerName": "Tran Thi B",
+    "items": [
+        {
+            "id": 1,
+            "name": "Thay nguồn laptop",
+            "quantity": 1,
+            "unitPrice": 850000.00,
+            "lineTotal": 850000.00
+        },
+        {
+            "id": 2,
+            "name": "Vệ sinh máy",
+            "quantity": 1,
+            "unitPrice": 100000.00,
+            "lineTotal": 100000.00
+        }
+    ],
+    "totalAmount": 950000.00,
+    "status": "ACCEPTED",
+    "createdAt": "2026-10-02T21:53:26.976962"
+}
 ```
 
 ------------------------------------------------------------------------
-# 4. Chỉ sau khi báo giá được chấp nhận
+# 1. Tạo giao dịch thanh toán 
 
 API:
 
 ``` http
-PATCH http://localhost:8080/api/quotes/1/payment
+POST http://localhost:8080/api/repair-tickets/1/payments
+```
+
+Body:
+
+``` json
+{
+  "method": "BANK_TRANSFER"
+}
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+{
+    "id": 1,
+    "ticketCode": "PS00001",
+    "amount": 950000.00,
+    "status": "PENDING",
+    "method": "BANK_TRANSFER",
+    "dueDate": "2026-11-01",
+    "createdAt": "2026-10-02T21:54:59.0308958",
+    "paidAt": null
+}
+```
+
+------------------------------------------------------------------------
+# 2. Lấy thông tin lịch sử giao dịch
+
+API:
+
+``` http
+GET http://localhost:8080/api/repair-tickets/1/payments
 ```
 
 Body:
@@ -543,13 +627,56 @@ Body:
 Backend trả về thông tin đăng nhập và JWT.
 
 Ví dụ:
-Gọi PATCH http://localhost:8080/api/quotes/1/payment sẽ đánh dấu báo giá là PAID trong hệ thống ngay lập tức, nếu báo giá đang ở trạng thái ACCEPTED.
 
 ``` json
-
+[
+    {
+        "id": 1,
+        "ticketCode": "PS00001",
+        "amount": 950000.00,
+        "status": "PENDING",
+        "method": "BANK_TRANSFER",
+        "dueDate": "2026-11-01",
+        "createdAt": "2026-10-02T21:54:59.030896",
+        "paidAt": null
+    }
+]
 ```
 
 ------------------------------------------------------------------------
+# 3. Xác nhận đã nhận tiền
+
+API:
+
+``` http
+PATCH http://localhost:8080/api/payments/1/confirm
+```
+
+Body:
+
+``` json
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ: Chỉ gọi bước này sau khi tiền đã được nhận. Thay 1 bằng ID giao dịch ở bước 2
+
+``` json
+{
+    "id": 1,
+    "ticketCode": "PS00001",
+    "amount": 950000.00,
+    "status": "PAID",
+    "method": "BANK_TRANSFER",
+    "dueDate": "2026-11-01",
+    "createdAt": "2026-10-02T21:54:59.030896",
+    "paidAt": "2026-10-02T21:56:05.6599999"
+}
+```
+
+------------------------------------------------------------------------
+
+
 
 
 
