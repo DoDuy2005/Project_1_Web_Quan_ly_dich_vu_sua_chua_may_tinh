@@ -417,3 +417,139 @@ Ví dụ:
 ------------------------------------------------------------------------
 
 
+# 1. thêm Báo giá
+
+API:
+
+``` http
+POST http://localhost:8080/api/repair-tickets/1/quote
+```
+
+Body:
+
+``` json
+{
+  "items": [
+    {
+      "name": "Thay nguồn laptop",
+      "quantity": 1,
+      "unitPrice": 850000
+    },
+    {
+      "name": "Vệ sinh máy",
+      "quantity": 1,
+      "unitPrice": 100000
+    }
+  ]
+}
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ: 
+
+``` json
+
+```
+
+------------------------------------------------------------------------
+# 2. Lấy thông tin báo giá
+
+API:
+
+``` http
+GET http://localhost:8080/api/repair-tickets/1/quote
+```
+
+Body:
+
+``` json
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+{
+    "id": 1,
+    "quoteCode": "BG000001",
+    "repairTicketId": 1,
+    "ticketCode": "PS00001",
+    "customerName": "Tran Thi B",
+    "items": [
+        {
+            "id": 1,
+            "name": "Thay nguồn laptop",
+            "quantity": 1,
+            "unitPrice": 850000.00,
+            "lineTotal": 850000.00
+        },
+        {
+            "id": 2,
+            "name": "Vệ sinh máy",
+            "quantity": 1,
+            "unitPrice": 100000.00,
+            "lineTotal": 100000.00
+        }
+    ],
+    "totalAmount": 950000.00,
+    "status": "PAID",
+    "createdAt": "2026-10-02T20:56:22.14782",
+    "paidAt": "2026-10-02T20:58:27.346507"
+}
+```
+
+------------------------------------------------------------------------
+# 3. Hành động khách hàng 
+
+API:
+
+``` http
+PATCH http://localhost:8080/api/quotes/1/decision
+```
+
+Body:
+
+``` json
+{
+  "decision": "ACCEPTED" 
+}
+hoặc REJECTED
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+
+``` json
+
+```
+
+------------------------------------------------------------------------
+# 4. Chỉ sau khi báo giá được chấp nhận
+
+API:
+
+``` http
+PATCH http://localhost:8080/api/quotes/1/payment
+```
+
+Body:
+
+``` json
+```
+
+Backend trả về thông tin đăng nhập và JWT.
+
+Ví dụ:
+Gọi PATCH http://localhost:8080/api/quotes/1/payment sẽ đánh dấu báo giá là PAID trong hệ thống ngay lập tức, nếu báo giá đang ở trạng thái ACCEPTED.
+
+``` json
+
+```
+
+------------------------------------------------------------------------
+
+
+
