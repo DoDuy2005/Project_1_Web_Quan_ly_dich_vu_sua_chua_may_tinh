@@ -1,10 +1,16 @@
+export interface EmployeeUser {
+    id: number;
+    email: string;
+    role: string;
+}
+
 export interface Employee {
     id: number;
     employeeCode: string;
     fullName: string;
-    email: string;
     phone: string;
     status: "ACTIVE" | "LOCKED";
+    user: EmployeeUser;
 }
 
 export interface EmployeeRequest {
